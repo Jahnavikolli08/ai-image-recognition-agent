@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Recognition Agent</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🤖 AI Image Recognition Agent</h1>
+
+        <p>Upload an image and let AI identify the object.</p>
+
+        <br>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+
+            <label for="image-upload" class="custom-file-upload">
+                📁 Click to Select Image
+            </label>
+
+        <input id="image-upload" type="file" name="image" required>
+
+        <p id="file-name">No image selected</p>
+
+            <br><br>
+
+            <button type="submit">🔍 Predict Image</button>
+
+        </form>
+
+    </div>
+<script>
+
+const input = document.getElementById("image-upload");
+const fileName = document.getElementById("file-name");
+
+input.addEventListener("change", function(){
+
+    if(this.files.length > 0){
+        fileName.textContent = "✅ " + this.files[0].name;
+    }else{
+        fileName.textContent = "No image selected";
+    }
+
+});
+
+</script>
+</body>
+
+</html>
