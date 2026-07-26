@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ai-image-recognition-agent
+    name: visionverse-ai
     env: python
     pythonVersion: 3.11.9
     buildCommand: pip install -r requirements.txt
